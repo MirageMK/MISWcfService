@@ -19,5 +19,19 @@ namespace MISWcfService
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "getAllPredmeti")]
         List<Premet> getAllPredmeti();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "getAllZadolzitelni?nasoka={nasoka}")]
+        List<Premet> getAllZadolzitelni(string nasoka);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "getAllIzborni?nasoka={nasoka}")]
+        List<Premet> getAllIzborni(string nasoka);
     }
 }
