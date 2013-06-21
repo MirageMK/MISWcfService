@@ -21,7 +21,7 @@ namespace MISWcfService
             List<Premet> toReturn = new List<Premet>();
 
             SqlConnection connection = new SqlConnection(cString);
-            string sqlString = "SELECT * FROM mGroup";
+            string sqlString = "SELECT * FROM Predmeti";
             SqlCommand cmd = new SqlCommand(sqlString, connection);
 
             try
@@ -32,12 +32,12 @@ namespace MISWcfService
                 while (reader.Read())
                 {
                     Premet p = new Premet();
-                    p.ID = Int32.Parse(reader[0].ToString());
-                    p.key = reader[1].ToString();
-                    p.title = reader[2].ToString();
-                    p.subtitle = reader[3].ToString();
-                    p.backgroundImage = reader[4].ToString();
-                    p.description = reader[5].ToString();
+                    p.id = Int32.Parse(reader[0].ToString());
+                    p.naslov = reader[1].ToString();
+                    p.smer = reader[2].ToString();
+                    Int32.TryParse(reader[3].ToString(), out p.semestar);
+                    Boolean.TryParse(reader[4].ToString(), out  p.zadolzitelen);
+                    p.opis = reader[5].ToString();
 
                     toReturn.Add(p);
                 }
@@ -46,8 +46,8 @@ namespace MISWcfService
             catch (Exception e)
             {
                 Premet p = new Premet();
-                p.ID = -1;
-                p.title = e.ToString();
+                p.id = -1;
+                p.naslov = e.ToString();
 
                 toReturn.Add(p);
                 return toReturn;

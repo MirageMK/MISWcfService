@@ -10,16 +10,16 @@ namespace MISWcfService
     public class Premet
     {
         [DataMember]
-        public int ID;
+        public int id;
         [DataMember]
-        public string key;
+        public string naslov;
         [DataMember]
-        public string title;
+        public string smer;
         [DataMember]
-        public string subtitle;
+        public int semestar;
         [DataMember]
-        public string backgroundImage;
+        public bool zadolzitelen;
         [DataMember]
-        public string description;
+        public string opis;
     }
 }
