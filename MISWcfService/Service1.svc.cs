@@ -64,7 +64,7 @@ namespace MISWcfService
             List<Premet> toReturn = new List<Premet>();
 
             SqlConnection connection = new SqlConnection(cString);
-            string sqlString = "SELECT * FROM Predmeti WHERE nasoka LIKE %" + nasoka + "% AND zadolzitelen=1";
+            string sqlString = "SELECT * FROM Predmeti WHERE nasoka LIKE '%" + nasoka + "%' AND zadolzitelen=1";
             SqlCommand cmd = new SqlCommand(sqlString, connection);
 
             try
@@ -107,7 +107,7 @@ namespace MISWcfService
             List<Premet> toReturn = new List<Premet>();
 
             SqlConnection connection = new SqlConnection(cString);
-            string sqlString = "SELECT * FROM Predmeti WHERE nasoka LIKE %" + nasoka + "% AND zadolzitelen=0";
+            string sqlString = "SELECT * FROM Predmeti WHERE nasoka LIKE '%" + nasoka + "%' AND zadolzitelen=0";
             SqlCommand cmd = new SqlCommand(sqlString, connection);
 
             try
