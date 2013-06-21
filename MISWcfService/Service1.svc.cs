@@ -59,12 +59,12 @@ namespace MISWcfService
             return toReturn;
         }
 
-        public List<Premet> getAllZadolzitelni(string nasoka)
+        public List<Premet> getAllZadolzitelni(string smer)
         {
             List<Premet> toReturn = new List<Premet>();
 
             SqlConnection connection = new SqlConnection(cString);
-            string sqlString = "SELECT * FROM Predmeti WHERE nasoka LIKE '%" + nasoka + "%' AND zadolzitelen=1";
+            string sqlString = "SELECT * FROM Predmeti WHERE smer LIKE '%" + smer + "%' AND zadolzitelen=1";
             SqlCommand cmd = new SqlCommand(sqlString, connection);
 
             try
@@ -102,12 +102,12 @@ namespace MISWcfService
             return toReturn;
         }
 
-        public List<Premet> getAllIzborni(string nasoka)
+        public List<Premet> getAllIzborni(string smer)
         {
             List<Premet> toReturn = new List<Premet>();
 
             SqlConnection connection = new SqlConnection(cString);
-            string sqlString = "SELECT * FROM Predmeti WHERE nasoka LIKE '%" + nasoka + "%' AND zadolzitelen=0";
+            string sqlString = "SELECT * FROM Predmeti WHERE smer LIKE '%" + smer + "%' AND zadolzitelen=0";
             SqlCommand cmd = new SqlCommand(sqlString, connection);
 
             try

@@ -24,14 +24,14 @@ namespace MISWcfService
         [WebInvoke(Method = "GET",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "getAllZadolzitelni?nasoka={nasoka}")]
-        List<Premet> getAllZadolzitelni(string nasoka);
+            UriTemplate = "getAllZadolzitelni?smer={smer}")]
+        List<Premet> getAllZadolzitelni(string smer);
 
         [OperationContract]
         [WebInvoke(Method = "GET",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "getAllIzborni?nasoka={nasoka}")]
-        List<Premet> getAllIzborni(string nasoka);
+            UriTemplate = "getAllIzborni?smer={smer}")]
+        List<Premet> getAllIzborni(string smer);
     }
 }
