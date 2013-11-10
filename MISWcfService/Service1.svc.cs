@@ -16,12 +16,14 @@ namespace MISWcfService
     {
         string cString = ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING"];
 
-        public List<Premet> getAllPredmeti()
+        public List<Premet> getAllPredmeti(string smer)
         {
             List<Premet> toReturn = new List<Premet>();
 
             SqlConnection connection = new SqlConnection(cString);
             string sqlString = "SELECT * FROM Predmeti";
+            if (smer!=null)
+                sqlString += " WHERE smer LIKE '%" + smer + "%'";
             SqlCommand cmd = new SqlCommand(sqlString, connection);
 
             try

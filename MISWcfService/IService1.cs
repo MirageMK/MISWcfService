@@ -17,8 +17,8 @@ namespace MISWcfService
         [WebInvoke(Method = "GET",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "getAllPredmeti")]
-        List<Premet> getAllPredmeti();
+            UriTemplate = "getAllPredmeti?smer={smer}")]
+        List<Premet> getAllPredmeti(string smer);
 
         [OperationContract]
         [WebInvoke(Method = "GET",
